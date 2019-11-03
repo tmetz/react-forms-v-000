@@ -20,13 +20,18 @@ class ParentComponent extends React.Component {
     })
   }
 
+  handleChange = event => {
+  this.setState({
+    [event.target.name]: event.target.value
+  })
+}
+
   render() {
     return (
       <div>
         <Form
           formData={this.state}
-          handleFirstNameChange={this.handleFirstNameChange}
-          handleLastNameChange={this.handleLastNameChange}
+          handleChange={this.handleChange}
         />
         <DisplayData formData={this.state} />
       </div>
